@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amit Padman - Portfolio</title>
+
+    <!-- Font & Icons -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #f7f4e9;
+        color: #222;
+        scroll-behavior: smooth;
+      }
+
+      /* Navbar */
+      nav {
+        position: sticky;
+        top: 0;
+        background-color: #8b0000;
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 5%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: 700;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+      }
+
+      nav ul li {
+        margin: 0 15px;
+      }
+
+      nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+
+      nav ul li a:hover {
+        color: #ffd27f;
+      }
+
+      /* Hero Section */
+      .firstsection {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        min-height: 90vh;
+        background: linear-gradient(135deg, #b8860b, #d2b48c);
+        color: #fff;
+        padding: 60px 10%;
+        text-align: center;
+      }
+
+      .leftsection {
+        flex: 1 1 400px;
+        font-size: 2.2rem;
+        line-height: 1.5;
+      }
+
+      .leftsection .highlight {
+        color: #5a1a01;
+        font-weight: 700;
+      }
+
+      #element {
+        color: #fff;
+        font-weight: 600;
+      }
+
+      .rightsection img {
+        width: 300px;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease;
+      }
+
+      .rightsection img:hover {
+        transform: scale(1.05);
+      }
+
+      hr {
+        border: none;
+        height: 2px;
+        background: #ac1111;
+        margin: 60px auto;
+        width: 80%;
+      }
+
+      /* About Section */
+      .secondsection {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        padding: 80px 10%;
+        background-color: #e3b75e;
+      }
+
+      .secondsection img {
+        width: 400px;
+        border-radius: 15px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      .about-text {
+        flex: 1 1 400px;
+        background: #4f7c82;
+        color: #ffffff;
+        padding: 40px;
+        border-radius: 15px;
+        line-height: 1.6;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+      }
+
+      .about-text:hover {
+        transform: translateY(-5px);
+      }
+
+      /* Skills */
+      .skills-section {
+        padding: 80px 10%;
+        background-color: #d17171;
+        text-align: center;
+      }
+
+      .skills-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+        color: #8b0000;
+      }
+
+      .skills-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+      }
+
+      .skill {
+        background: #fff;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .skill:hover {
+        transform: translateY(-8px);
+      }
+
+      .skill h3 {
+        color: #5a1a01;
+        margin-bottom: 15px;
+      }
+
+      .skill img {
+        height: 70px;
+        margin: 10px;
+      }
+
+      /* Projects */
+      .projects {
+        padding: 80px 10%;
+        background: #ab9542;
+        text-align: center;
+      }
+
+      .projects h2 {
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+        color: #8b0000;
+      }
+
+      .projects-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .project-card {
+        background: #292424;
+        color: #fff;
+        padding: 20px;
+        border-radius: 15px;
+        transition: transform 0.3s ease;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+      }
+
+      .project-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .project-card img {
+        width: 100%;
+        border-radius: 10px;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .project-card h3 {
+        margin: 15px 0;
+        color: #ffd27f;
+      }
+
+      /* Contact */
+      #contact {
+        background-color: #8b0000;
+        color: #fff;
+        padding: 80px 10%;
+        text-align: center;
+      }
+
+      #contact h2 {
+        font-size: 2.2rem;
+        margin-bottom: 40px;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+      }
+
+      .contact-item {
+        background: #b22222;
+        padding: 20px;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+      }
+
+      .contact-item:hover {
+        transform: translateY(-5px);
+      }
+
+      .contact-item a {
+        color: #ffd27f;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #5a1a01;
+        color: #fff;
+      }
+
+      @media (max-width: 768px) {
+        .leftsection {
+          font-size: 1.8rem;
+        }
+
+        nav ul {
+          flex-direction: column;
+          background: #8b0000;
+          position: absolute;
+          top: 80px;
+          right: 0;
+          width: 100%;
+          display: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav>
+      <div class="logo">Amit's Portfolio</div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="firstsection">
+      <div class="leftsection">
+        Hi, I'm <span class="highlight">Amit Padman</span>  
+        <div>and I'm a passionate</div>
+        <span id="element"></span>
+      </div>
+      <div class="rightsection">
+        <img src="ap.png" alt="Amit's photo" />
+      </div>
+    </section>
+
+    <hr id="about" />
+
+    <!-- About -->
+    <section class="secondsection">
+      <img src="./ghibli.jpg" alt="about" />
+      <div class="about-text">
+        I am a Computer Science graduate from Indira College of Engineering and
+        Management, Pune. I enjoy problem-solving and coding, always striving
+        for 100% in my work.  
+        <br /><br />
+        I’ve worked on technologies like Python, Flask, MySQL, MongoDB, HTML5,
+        CSS, Java, and C++. Passionate about developing applications that solve
+        real-world problems and looking for opportunities to grow in software
+        engineering.
+      </div>
+    </section>
+
+    <hr id="skills" />
+
+    <!-- Skills -->
+    <section class="skills-section">
+      <h2>My Skills</h2>
+      <div class="skills-container">
+        <div class="skill">
+          <h3>Frontend</h3>
+          <img src="./htmllogo.png" alt="HTML" />
+          <img src="./CSS-Logo-2011.png" alt="CSS" />
+          <img src="./jslogo.png" alt="JS" />
+        </div>
+
+        <div class="skill">
+          <h3>Programming</h3>
+          <img src="./ISO_C++_Logo.svg.png" alt="C++" />
+          <img src="./pythonimg.jpeg" alt="Python" />
+        </div>
+
+        <div class="skill">
+          <h3>CS Fundamentals</h3>
+          <ul>
+            <li>Data Structures (DSA)</li>
+            <li>OOP</li>
+            <li>DBMS</li>
+          </ul>
+        </div>
+
+        <div class="skill">
+          <h3>Databases</h3>
+          <ul>
+            <li>MongoDB</li>
+            <li>MySQL</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <hr id="projects" />
+
+    <!-- Projects -->
+    <section class="projects">
+      <h2>My Projects</h2>
+      <div class="projects-container">
+        <div class="project-card">
+          <img src="./portimage.png" alt="Portfolio Website" />
+          <h3>Portfolio Website</h3>
+          <p>
+            A responsive portfolio showcasing my skills, projects, and experience.
+            Built with modern HTML, CSS, and JS design techniques.
+          </p>
+        </div>
+
+        <div class="project-card">
+          <img src="deep_learning.png" alt="Deep Learning Project" />
+          <h3>Deep Learning Project</h3>
+          <p>
+            Built a deep learning model using TensorFlow/Keras for real-world data problems, focusing on model optimization and performance tuning.
+          </p>
+        </div>
+
+        <div class="project-card">
+          <img src="./car.jpg" alt="Car Rental System" />
+          <h3>Car Rental System</h3>
+          <p>
+            A web-based car rental management platform handling vehicle inventory,
+            bookings, and payments with a simple user interface.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <h3>Name</h3>
+          <p>Amit Padman</p>
+        </div>
+        <div class="contact-item">
+          <h3>Phone</h3>
+          <p>+91 98765 43210</p>
+        </div>
+        <div class="contact-item">
+          <h3>Email</h3>
+          <p><a href="mailto:amitpadman@gmail.com">amitpadman@gmail.com</a></p>
+        </div>
+        <div class="contact-item">
+          <h3>GitHub</h3>
+          <p><a href="https://github.com/amitpadman" target="_blank">github.com/amitpadman</a></p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © 2025 Amit Padman | Designed with ❤️
+    </footer>
+
+    <!-- Typed.js -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+      var typed = new Typed("#element", {
+        strings: ["Web Developer", "Data Science Enthusiast", "Engineer"],
+        typeSpeed: 70,
+        backSpeed: 40,
+        loop: true,
+      });
+    </script>
+  </body>
+</html>
